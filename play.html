@@ -1,0 +1,84 @@
+<html lang="en-US">
+  <head>
+  <meta charset="UTF-8">
+    <style>
+        body{
+          color: #eee;
+          background: #222;
+          font-family: 'Ubuntu Mono';
+      }
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+    <div id="container"></div>
+    
+    <script>
+      name=prompt("Enter your name");
+alert("Nice to meet you, "+name+" here I am going to show an implementation of stack");
+class node{
+ constructor(data)
+ {
+     this.data=data;
+     this.next=null;
+ }
+};
+class stack_t{
+    constructor()
+    {
+        this.head=null;
+        this.size=0;
+    }
+    push(data)
+    {
+        if(this.head!=null){
+            var newnode=new node(data);
+            newnode.next=this.head;
+            this.head=newnode;
+            delete window.newnode;
+        }
+        else{
+            this.head=new node(data);
+        }
+        ++(this.size);
+    }
+    pop()
+    {
+        if(this.head!=null){
+            var save=this.head;
+            delete window.head;
+            this.head=save.next;
+            delete window.save;
+            --(this.size);
+        }
+        else{
+          head=null;
+          document.write("Underflow encountered!<br>");
+        }
+    }
+};
+stack=new stack_t();
+document.write("Pushing into stack<br>");
+for(x=0;x<10;x++){
+  stack.push(x+1);
+  document.write(stack.head.data+"<br>");
+}
+document.write("Poping from stack<br>")
+for(x=0;x<100;x++){
+    //document.write(x+1);
+    document.write(stack.head.data+"<br>");
+    stack.pop();
+}
+function gebi(id)
+{
+  return document.getElementById(id);
+}
+      </script>
+    
+  </body>
+</html>
